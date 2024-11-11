@@ -5,7 +5,9 @@ function PlantList({plants, setPlants, searchPlants}) {
 
   useEffect(()=>{
     fetch(baseUrl)
-  })
+    .then(response => response.json())
+    .then(data => setPlants(data))
+  }, [])
   return (
     <ul className="cards">{/* render PlantCards components in here */}</ul>
   );
