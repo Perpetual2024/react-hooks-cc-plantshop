@@ -17,7 +17,7 @@ function PlantList({plants, setPlants, searchPlants}) {
   }, []);
   
   function returnedPlants(){
-    
+    return filteredPlants.map(plant => <PlantCard key={plant.id} plant={plant}/>)
   }
 
   return (
