@@ -1,13 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import PlantCard from "./PlantCard";
-const baseUrl = "http://localhost:6001/plants"
-function PlantList({plants, setPlants, searchPlants}) {
+function PlantList({plants, setPlants, searchedPlant}) {
 
   useEffect(()=>{
-    fetch(baseUrl)
+    fetch("http://localhost:6001/plants")
     .then(response => response.json())
     .then(data => setPlants(data))
-  }, [])
+  }, [setPlants])
 
   const filteredPlants = plants.reduce((acc, plant) => {
     if (!searchedPlant || plant.name.toLowerCase().includes(searchedPlant.toLowerCase())) {

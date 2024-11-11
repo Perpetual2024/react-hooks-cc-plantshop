@@ -12,12 +12,19 @@ const [formData, setFormData] = useState({name:"", image: "", price: 0 });
 function handleSubmit(event) {
   event.preventDefault();
 
-  const newPlant={
+  /*const newPlant={
     name: formData.name,
     image: formData.image,
     price: formData.price.toString()
-  }
+  }*/
 }
+fetch("http://localhost:6001/plants",{
+method : "POST",
+headers: {
+  "Content-Type": "application/json"
+}})
+.then(response => response.json())
+.then(plant => handleAddPlant(plant))
 
   return (
     <div className="new-plant-form">
@@ -26,7 +33,7 @@ function handleSubmit(event) {
         <input type="text" name="name" placeholder="Plant name" onChange={handleChange}/>
         <input type="text" name="image" placeholder="Image URL" onChande={handleChange}/>
         <input type="number" name="price" step="0.01" placeholder="Price" onChange={handleChange}/>
-        <button type="submit">Add Plant</button>
+        <button type="submit" >Add Plant</button>
       </form>
     </div>
   );
