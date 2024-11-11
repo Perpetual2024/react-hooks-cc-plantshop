@@ -8,9 +8,10 @@ function PlantPage() {
   const [plants, setPlants] = useState([])
 
   function handleAddPlant(newPlant){
-    const newPlants = [...plants, newPlant];
-    setSearchedPlant(newPlants);
+    const newPlantList = [...plants, newPlant]
+    setPlants(newPlantList)
   }
+   
   return (
     <main>
       <NewPlantForm handleAddPlant={handleAddPlant}/>

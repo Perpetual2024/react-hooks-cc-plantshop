@@ -7,8 +7,9 @@ function PlantCard({plant}) {
     setInStock(!inStock);
   }
   return (
+    
     <li className="card" data-testid="plant-item" key={plant.id} >
-      <img alt={plant.name} src ={plant.img} />
+      <img src={plant.image} alt={plant.name} />
       <h4>{plant.name}</h4>
       <p>Price: {plant.price}</p>
       {inStock ? (
