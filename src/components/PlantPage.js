@@ -13,7 +13,7 @@ function PlantPage() {
   }
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm handleAddPlant={handleAddPlant}/>
       <Search />
       <PlantList />
     </main>
