@@ -7,11 +7,11 @@ function PlantCard({plant}) {
     setInStock(!inStock);
   }
   return (
-    <li className="card" data-testid="plant-item">
+    <li className="card" data-testid="plant-item" key={plant.id} >
       <img src={plant.img} alt={plant.name} />
-      <h4>{"plant name"}</h4>
-      <p>Price: {"plant price"}</p>
-      {true ? (
+      <h4>{plant.name}</h4>
+      <p>Price: {plant.price}</p>
+      {isStock ? (
         <button className="primary" onClick={handleClick}>In Stock</button>
       ) : (
         <button onClick={handleClick}>Out of Stock</button>
