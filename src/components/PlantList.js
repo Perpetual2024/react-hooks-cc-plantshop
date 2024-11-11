@@ -16,6 +16,10 @@ function PlantList({plants, setPlants, searchPlants}) {
     return acc;
   }, []);
   
+  function returnedPlants(){
+    
+  }
+
   return (
     <ul className="cards">{/* render PlantCards components in here */}</ul>
   );
