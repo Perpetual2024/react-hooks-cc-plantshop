@@ -2,6 +2,10 @@ import React, {useState} from "react";
 
 function PlantCard({plant}) {
   const [inStock, setInStock] = useState(true);
+
+  function handleClick(){
+    setInStock(!inStock);
+  }
   return (
     <li className="card" data-testid="plant-item">
       <img src={"https://via.placeholder.com/400"} alt={"plant name"} />
