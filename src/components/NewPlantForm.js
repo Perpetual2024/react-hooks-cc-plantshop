@@ -9,14 +9,14 @@ const [formData, setFormData] = useState({name:"", image: "", price: 0 });
 
   }
 
-/*function handleSubmit(event) {
+function handleSubmit(event) {
   event.preventDefault();
 
   const newPlant={
     name: formData.name,
     image: formData.image,
     price: formData.price.toString()
-  }*/
+  }
 }
 
   return (
