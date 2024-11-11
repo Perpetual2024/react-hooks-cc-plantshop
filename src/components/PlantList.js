@@ -21,7 +21,7 @@ function PlantList({plants, setPlants, searchPlants}) {
   }
 
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">{<returnedPlants />}</ul>
   );
 }
 
