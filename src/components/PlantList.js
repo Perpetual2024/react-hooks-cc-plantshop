@@ -8,6 +8,14 @@ function PlantList({plants, setPlants, searchPlants}) {
     .then(response => response.json())
     .then(data => setPlants(data))
   }, [])
+
+  const filteredPlants = plants.reduce((acc, plant) => {
+    if (!searchedPlant || plant.name.toLowerCase().includes(searchedPlant.toLowerCase())) {
+      acc.push(plant);
+    }
+    return acc;
+  }, []);
+  
   return (
     <ul className="cards">{/* render PlantCards components in here */}</ul>
   );
